@@ -1,0 +1,8 @@
+Package: cpr
+Version: 1.6.2
+Depends: curl
+Architecture: x64-windows-static
+Multi-Arch: same
+Abi: 7d18afcf180c86a4690e6c80c8083a76d069869b9bad6146bfe03396efae3a13
+Description: C++ Requests is a simple wrapper around libcurl inspired by the excellent Python Requests project.
+Type: Port
