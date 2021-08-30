@@ -48,6 +48,8 @@ bool CXenForo::sendRequest(std::string_view szLogin, std::string_view szPassword
 
 	std::string szResponse = cprRequest.text;
 
+	std::cout << szResponse << std::endl;
+
 	/* checking if we got a full json formatted reponse before parsing it */
 	if (!nlohmann::json::accept(szResponse))
 	{

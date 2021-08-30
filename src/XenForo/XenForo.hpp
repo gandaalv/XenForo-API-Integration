@@ -13,6 +13,9 @@
 /* includes */
 #include "../Json/Json.hpp"
 
+/* endpoints */
+#include "Endpoints/Auth.hpp"
+
 /* saving some values of the response from the auth.php endpoint into a struct */
 struct UserData_t
 {
@@ -39,6 +42,12 @@ public:
 	void printUserData();
 	bool sendRequest(std::string_view szLogin, std::string_view szPassword); /* post request to the /auth/ endpoint */
 	bool authenticate();
+
+public:
+	struct Endpoints_t
+	{
+		CAuth Auth;
+	} Endpoint;
 
 private:
 	std::string m_szApiUrl;
