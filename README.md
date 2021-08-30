@@ -9,7 +9,7 @@ C++ XenForo API wrapper
 # Platform Toolset and Configuration
 >* Windows SDK Version: 10.0.20348.0
 >* Platform Toolset: Visual Studio 2022 (v143)
->* C++ Language Standart: C++17
+>* C++ Language Standart: std:c++latest
 
 If you encounter any compiling issues related to the dependency libraries and the platform toolset / windows sdk version, build them yourself by following the steps below.
 
