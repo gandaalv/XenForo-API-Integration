@@ -31,9 +31,19 @@ int main(void)
 	std::cout << "Enter your forum password:";
 	std::cin >> szPassword;
 
+	/* saving api url and api key */
 	g_XenForo.initialize("https://3a7388f88a2382ef.demo-xenforo.com/226p2/index.php/api", "-PymLn2SfxFbKrdgJSIu0ur1qwwHopFE");
 
-	g_XenForo.authenticate(szLogin, szPassword);
+	/* sending the request */
+	if (g_XenForo.sendRequest(szLogin, szPassword))
+	{
+		/* authenticating user */
+		if (g_XenForo.authenticate())
+		{
+			/* print all stored UserData variables after successful authentication */
+			g_XenForo.printUserData();
+		}
+	}
 
-	std::cin.get();
+	system("pause");
 }

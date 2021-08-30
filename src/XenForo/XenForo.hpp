@@ -36,7 +36,9 @@ public:
 	UserData_t UserData;
 
 	void initialize(std::string_view szApiUrl, std::string_view szApiKey); /* saving api url and api key into private member variables */
-	bool authenticate(std::string_view szLogin, std::string_view szPassword); /* post request to the /auth/ endpoint */
+	void printUserData();
+	bool sendRequest(std::string_view szLogin, std::string_view szPassword); /* post request to the /auth/ endpoint */
+	bool authenticate();
 
 private:
 	std::string m_szApiUrl;
