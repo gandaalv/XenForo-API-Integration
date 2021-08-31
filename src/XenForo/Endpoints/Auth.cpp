@@ -166,3 +166,27 @@ bool CAuth::request(std::string_view szLogin, std::string_view szPassword)
 
 	return true;
 }
+
+bool CAuth::example()
+{
+	/* check if user is banned */
+	if (Vars.User.is_banned)
+	{
+		std::cout << "[CAuth::example] User banned." << std::endl;
+		return false;
+	}
+
+	/* check if user has the allowed secondary group id */
+	if (std::find(Vars.User.secondary_group_ids.begin(), Vars.User.secondary_group_ids.end(), 3 /* allowed usergroup */) != Vars.User.secondary_group_ids.end())
+	{
+		return true;
+	}
+
+	/* check if user is a staff member */
+	if (Vars.User.is_admin || Vars.User.is_super_admin || Vars.User.is_moderator || Vars.User.is_staff)
+	{
+		return true;
+	}
+
+	return false;
+}

@@ -99,6 +99,7 @@ class CAuth
 public:
 	bool setup(std::string_view szEndpointUrl, std::string_view szApiKey);
 	bool request(std::string_view szLogin, std::string_view szPassword);
+	bool example();
 
 	Auth_t Vars;
 

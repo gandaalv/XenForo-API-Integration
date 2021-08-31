@@ -20,12 +20,18 @@
 /* includes */
 #include "XenForo/XenForo.hpp"
 
-/* user input */
-std::string szLogin;
-std::string szPassword;
+/* input option */
+int iOption;
 
-int main(void)
+/* auth endpoint */
+void optionAuth()
 {
+	/* user input */
+	std::string szLogin;
+	std::string szPassword;
+
+	system("CLS");
+
 	std::cout << "Enter your forum username or e-mail:";
 	std::cin >> szLogin;
 	std::cout << "Enter your forum password:";
@@ -40,7 +46,26 @@ int main(void)
 	{
 		std::cout << "[CAuth] Failed to send request." << std::endl;
 	}
-	
+
+	if (g_XenForo.Endpoint.Auth.example())
+	{
+		std::cout << "[CAuth] Successfully authenticated user." << std::endl;
+		/* do your post authentication stuff here */
+	}
+}
+
+int main(void)
+{
+	std::cout << "Choose an endpoint:" << std::endl;
+	std::cout << "1. Auth.php" << std::endl;
+	std::cout << "Your input (enter only the digit):";
+	std::cin >> iOption;
+
+	switch (iOption)
+	{
+	case 1: optionAuth(); break;
+	default: std::cout << "Option not found, try again." << std::endl; break;
+	}
 
 	system("pause");
 }

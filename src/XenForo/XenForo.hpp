@@ -13,4 +13,4 @@ public:
 	} Endpoint;
 };
 
-extern CXenForo g_XenForo;
+CXenForo g_XenForo;
