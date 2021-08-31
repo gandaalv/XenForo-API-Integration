@@ -169,10 +169,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="XenForo\Endpoints\Auth.cpp" />
-    <ClCompile Include="XenForo\XenForo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Json\Json.hpp" />
     <ClInclude Include="XenForo\Endpoints\Auth.hpp" />
     <ClInclude Include="XenForo\XenForo.hpp" />
   </ItemGroup>

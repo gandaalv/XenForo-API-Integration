@@ -18,18 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="XenForo\XenForo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="XenForo\Endpoints\Auth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="XenForo\XenForo.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Json\Json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="XenForo\Endpoints\Auth.hpp">

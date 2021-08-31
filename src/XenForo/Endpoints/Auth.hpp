@@ -1,11 +1,15 @@
+/* header guard */
 #pragma once
 
+/* windows includes */
 #include <string>
 #include <vector>
 #include <iostream>
-#include <fmt/core.h>
+
+/* dependency includes */
 #include <cpr/cpr.h>
-#include "../../Json/Json.hpp"
+#include <fmt/core.h>
+#include <json/json.hpp>
 
 struct Auth_t
 {

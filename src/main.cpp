@@ -31,19 +31,16 @@ int main(void)
 	std::cout << "Enter your forum password:";
 	std::cin >> szPassword;
 
-	/* saving api url and api key */
-	g_XenForo.initialize("https://3a7388f88a2382ef.demo-xenforo.com/226p2/index.php/api", "-PymLn2SfxFbKrdgJSIu0ur1qwwHopFE");
-
-	/* sending the request */
-	if (g_XenForo.sendRequest(szLogin, szPassword))
+	if (!g_XenForo.Endpoint.Auth.setup("https://3a7388f88a2382ef.demo-xenforo.com/226p2/index.php/api/auth", "-PymLn2SfxFbKrdgJSIu0ur1qwwHopFE"))
 	{
-		/* authenticating user */
-		if (g_XenForo.authenticate())
-		{
-			/* print all stored UserData variables after successful authentication */
-			g_XenForo.printUserData();
-		}
+		std::cout << "[CAuth] Failed to setup." << std::endl;
 	}
+
+	if (!g_XenForo.Endpoint.Auth.request(szLogin, szPassword))
+	{
+		std::cout << "[CAuth] Failed to send request." << std::endl;
+	}
+	
 
 	system("pause");
 }
